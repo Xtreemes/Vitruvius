@@ -1,0 +1,4 @@
+name: Vitruvius
+version: '${version}'
+main: org.xtreemes.vitruvius.Vitruvius
+api-version: '1.20'
