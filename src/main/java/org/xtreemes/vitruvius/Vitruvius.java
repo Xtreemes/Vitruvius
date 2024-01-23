@@ -4,6 +4,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.xtreemes.vitruvius.commands.CreateCommand;
+import org.xtreemes.vitruvius.commands.SelectionCommand;
 import org.xtreemes.vitruvius.events.LeaveEvent;
 import org.xtreemes.vitruvius.selection.SelectionHandler;
 
@@ -24,6 +25,7 @@ public final class Vitruvius extends JavaPlugin {
         LOGGER.log(Level.INFO, "Vitruvius started");
 
         getCommand("create").setExecutor(new CreateCommand());
+        getCommand("select").setExecutor(new SelectionCommand());
 
         registerListeners(
                 new LeaveEvent()

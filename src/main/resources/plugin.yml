@@ -6,3 +6,6 @@ commands:
   create:
     description: "Create and select a text, block, or item display entity."
     usage: "/create"
+  select:
+    descrption: "Select a text, block, or item display entity. Alternatively, reset the selection."
+    usage: "/select"

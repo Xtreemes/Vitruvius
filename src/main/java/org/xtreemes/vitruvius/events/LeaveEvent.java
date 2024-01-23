@@ -6,6 +6,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.xtreemes.vitruvius.selection.SelectionHandler;
 
 public class LeaveEvent implements Listener {
+
     @EventHandler
     public void playerLeave(PlayerQuitEvent e){
         SelectionHandler.setSelection(e.getPlayer().getUniqueId());
