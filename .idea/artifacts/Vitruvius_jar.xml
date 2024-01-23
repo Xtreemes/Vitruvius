@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Vitruvius:jar">
+    <output-path>$USER_HOME$/Desktop/plugintesting/plugins</output-path>
+    <root id="archive" name="Vitruvius.jar">
+      <element id="module-output" name="Vitruvius.main" />
+    </root>
+  </artifact>
+</component>

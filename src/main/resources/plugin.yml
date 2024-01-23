@@ -2,3 +2,7 @@ name: Vitruvius
 version: '${version}'
 main: org.xtreemes.vitruvius.Vitruvius
 api-version: '1.20'
+commands:
+  create:
+    description: "Create and select a text, block, or item display entity."
+    usage: "/create"

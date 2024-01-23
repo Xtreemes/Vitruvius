@@ -45,3 +45,12 @@ processResources {
         expand props
     }
 }
+
+task copyJar(type: Copy, dependsOn: jar) {
+    from jar.archiveFile
+    into 'C:/Users/lucbi/Desktop/plugintesting/plugins'
+}
+
+build {
+    dependsOn copyJar
+}
