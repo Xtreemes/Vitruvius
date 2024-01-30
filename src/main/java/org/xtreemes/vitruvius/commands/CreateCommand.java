@@ -24,7 +24,12 @@ public class CreateCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        Player player = Objects.requireNonNull(sender.getServer().getPlayer(sender.getName()));
+        Player player;
+        try {
+            player = Objects.requireNonNull(sender.getServer().getPlayer(sender.getName()));
+        } catch (NullPointerException e) {
+            return true;
+        }
         if(!sender.isOp()){
             SendFeedback.sendFeedback(player, "You must have op to use this command!", false);
             return true;
@@ -58,6 +63,10 @@ public class CreateCommand implements CommandExecutor, TabCompleter {
                     if(length >= 2){
                         // If argument specifies, set material to either ID, hand, or default
                         mat = Material.matchMaterial(args[1]) != null ? Material.matchMaterial(args[1]) : (args[1].equals("hand")? player.getInventory().getItemInMainHand().getType():mat);
+                        if(!mat.isBlock()){
+                            SendFeedback.sendFeedback(player, "Not a block!", false);
+                            return true;
+                        }
                     }
                     entity.setBlock(mat.createBlockData());
                     selection = entity;

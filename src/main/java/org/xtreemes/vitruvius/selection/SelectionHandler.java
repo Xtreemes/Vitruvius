@@ -2,8 +2,7 @@ package org.xtreemes.vitruvius.selection;
 
 import org.bukkit.entity.Display;
 
-import java.util.HashMap;
-import java.util.UUID;
+import java.util.*;
 
 public class SelectionHandler {
     private static final HashMap<UUID, Display> selections = new HashMap<>();
@@ -36,5 +35,9 @@ public class SelectionHandler {
         for(UUID uuid : selections.keySet()){
             setSelection(uuid);
         }
+    }
+    public static void deleteSelection(Display entity){
+        selections.entrySet().removeIf(entry -> entry.getValue().equals(entity));
+        entity.remove();
     }
 }

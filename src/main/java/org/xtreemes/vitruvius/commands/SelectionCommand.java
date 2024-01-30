@@ -15,7 +15,12 @@ import java.util.Objects;
 public class SelectionCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        Player player = Objects.requireNonNull(sender.getServer().getPlayer(sender.getName()));
+        Player player;
+        try {
+            player = Objects.requireNonNull(sender.getServer().getPlayer(sender.getName()));
+        } catch (NullPointerException e) {
+            return true;
+        }
         double radius;
         if(!sender.isOp()){
             SendFeedback.sendFeedback(player, "You must have op to use this command!", false);

@@ -9,3 +9,9 @@ commands:
   select:
     descrption: "Select a text, block, or item display entity. Alternatively, reset the selection."
     usage: "/select"
+  delete:
+    description: "Delete the current selection."
+    usage: "/delete"
+  edit:
+    description: "Edit the current selection"
+    usage: "/edit"
