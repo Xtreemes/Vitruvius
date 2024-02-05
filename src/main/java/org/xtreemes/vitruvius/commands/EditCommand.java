@@ -126,6 +126,14 @@ public class EditCommand implements CommandExecutor, TabCompleter {
                     } else {
                         method.invoke(entity, new ItemStack(mat));
                     }
+                } else if(paramClass = String.class) {
+                    String text = "";
+                    for(i == 1; i < args.length; i++){
+                        text = text + args[i];
+                        if(i < args.length-1){
+                            text = text + " ";
+                        }
+                    }
                 }
             } catch (NoSuchMethodException e) {
                 SendFeedback.sendFeedback(player, "That is not a valid property!", false);
